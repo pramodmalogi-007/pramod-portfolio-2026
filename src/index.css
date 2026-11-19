@@ -1,0 +1,31 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{margin:0;background:#050203;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;
+background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px),radial-gradient(ellipse at 50% 0,rgba(255,38,63,.18),transparent 60%)}
+section{position:relative;scroll-margin-top:5rem}
+.glass{background:linear-gradient(135deg,rgba(255,38,63,.14),rgba(255,255,255,.04));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,38,63,.28);border-radius:1.5rem;box-shadow:0 10px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:999px;font-weight:700;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase;border:1px solid rgba(255,38,63,.5);background:rgba(10,4,5,.7);transition:.3s}
+.btn:hover,.btn:focus-visible{box-shadow:0 0 28px rgba(255,38,63,.55);transform:translateY(-2px);outline:none}
+.btn-primary{background:#ff263f}
+.chip{padding:.35rem .8rem;border-radius:999px;font-size:.8rem;border:1px solid rgba(255,38,63,.35);background:rgba(255,38,63,.08)}
+/* Skills */
+.skill-card{position:relative;padding:1.5rem 1rem;text-align:center;transition:box-shadow .35s,border-color .35s}
+.skill-card:hover{border-color:#ff263f;box-shadow:0 0 38px rgba(255,38,63,.55),0 10px 40px rgba(0,0,0,.5),inset 0 0 22px rgba(255,38,63,.15)}
+.skill-icon{display:inline-grid;place-items:center;height:3.5rem;width:3.5rem;border-radius:1rem;color:#ff263f;background:rgba(255,38,63,.12);border:1px solid rgba(255,38,63,.4);transition:.35s}
+.skill-card:hover .skill-icon{background:#ff263f;color:#fff;box-shadow:0 0 24px rgba(255,38,63,.8);transform:scale(1.1) rotate(-6deg)}
+@keyframes skillFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media (hover:hover) and (min-width:768px) and (prefers-reduced-motion:no-preference){.skill-float{animation:skillFloat 6s ease-in-out infinite}}
+/* Projects */
+.proj-wrap{transform-style:preserve-3d}
+.proj-card{overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(255,38,63,.18),inset 0 1px 0 rgba(255,255,255,.1)}
+.proj-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 0,rgba(255,38,63,.28),transparent 55%)}
+.proj-card>*{position:relative}
+/* Projects scroll progress bar */
+.proj-progress{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));width:min(432px,78vw);height:3px;transform:translateX(-50%);background:rgba(255,255,255,.14);border-radius:3px;opacity:0;pointer-events:none;z-index:40}
+.proj-progress span{display:block;height:100%;background:#ff263f;border-radius:3px;box-shadow:0 0 12px #ff263f;transform:scaleX(0);transform-origin:left}
+/* Contact form */
+.field-label{display:block;margin-bottom:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.field{width:100%;padding:.9rem 1rem;border-radius:1rem;color:#fff;font:inherit;background:rgba(5,2,3,.65);border:1px solid rgba(255,255,255,.14);transition:border-color .25s,box-shadow .25s}
+.field::placeholder{color:rgba(255,255,255,.35)}
+.field:focus{outline:none;border-color:#ff263f;box-shadow:0 0 0 3px rgba(255,38,63,.25),0 0 24px rgba(255,38,63,.3)}
